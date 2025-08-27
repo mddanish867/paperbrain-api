@@ -1,20 +1,38 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-python-multipart==0.0.6
-langchain==0.0.340
-langchain-openai==0.0.2
-pinecone-client==2.2.4
-faiss-cpu==1.7.4
-PyPDF2==3.0.1
-python-dotenv==1.0.0
-numpy==1.24.3
-openai==1.3.7
-tiktoken==0.5.2
-sentence-transformers==2.2.2
-pydantic==2.5.0
-python-jose==3.3.0
-passlib==1.7.4
+# fastapi==0.104.1
+fastapi
+# uvicorn==0.24.0
+uvicorn
+# python-multipart==0.0.6
+python-multipart
+# langchain==0.0.340
+langchain
+# langchain-openai==0.0.2
+langchain-openai
+# pinecone-client==2.2.4
+pinecone-client
+# faiss-cpu==1.7.4
+faiss-cpu
+# PyPDF2==3.0.1
+PyPDF2
+# python-dotenv==1.0.0
+python-dotenv
+# numpy==1.24.3
+numpy
+# openai==1.3.7
+openai
+# tiktoken==0.5.2
+tiktoken
+# sentence-transformers==2.2.2
+sentence-transformers
+# pydantic==2.5.0
+pydantic
+# python-jose==3.3.0
+python-jose
+# passlib==1.7.4
+passlib
 jwt
 redis
 pdf2image
 pytesseract
+upstash-redis
+email-validator

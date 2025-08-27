@@ -11,7 +11,7 @@ from app.services.redis_client import redis  # assuming you made a redis wrapper
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 auth = AuthService()
-rate = RateLimiter()
+rate = RateLimiter(limit=5, window=60)  # ✅ enforce limit: 5 requests per 60s
 
 # Schemas
 class RegisterReq(BaseModel):
@@ -50,7 +50,18 @@ class RefreshReq(BaseModel):
 
 def rl_dep(request: Request):
     ip = request.client.host if request and request.client else "unknown"
-    rate.check_rate_limit(ip)
+    try:
+        rate.check_rate_limit(ip)
+    except RuntimeError as e:  # Redis not available
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Rate limiter error: {str(e)}"
+        )
+    except Exception as e:  # Too many requests
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail=f"Rate limit exceeded: {str(e)}"
+        )
 
 
 @router.post("/register", response_model=TokenPair, dependencies=[Depends(rl_dep)])
