@@ -1,97 +1,334 @@
-from fastapi import Depends, HTTPException, status
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from jose import jwt
-from passlib.context import CryptContext
-import os, secrets
-from datetime import datetime, timedelta
-from app.services.redis_client import redis
+from sqlalchemy.orm import Session
+from fastapi import HTTPException, status, Depends, BackgroundTasks
+from fastapi.security import HTTPBearer
+from jose import JWTError
+import threading
+
+from app.db.models.user import User
+from app.core.security import (
+    verify_password, 
+    get_password_hash, 
+    create_access_token, 
+    create_refresh_token,
+    decode_token,
+    get_current_user,
+    generate_otp
+)
+from app.db.session import get_db
+from app.services.email import email_service
+from app.utils.logger import logger
 
 security = HTTPBearer()
 
-# ---- JWT config
-JWT_SECRET = os.getenv("JWT_SECRET_KEY", "change_me")
-JWT_ALG = os.getenv("JWT_ALGORITHM", "HS256")
-ACCESS_EXP_MIN = int(os.getenv("JWT_ACCESS_EXPIRES_MIN", "15"))
-REFRESH_EXP_DAYS = int(os.getenv("JWT_REFRESH_EXPIRES_DAYS", "7"))
-
-pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
 class AuthService:
-    def __init__(self):
-        self.secret_key = JWT_SECRET
-        self.algorithm = JWT_ALG
+    def __init__(self, db: Session):
+        self.db = db
 
-    # ---- Password hashing
-    def hash_password(self, plain: str) -> str:
-        return pwd_ctx.hash(plain)
-
-    def verify_password(self, plain: str, hashed: str) -> bool:
-        return pwd_ctx.verify(plain, hashed)
-
-    # ---- Tokens
-    def create_access_token(self, data: dict) -> str:
-        to_encode = data.copy()
-        to_encode.update({"type": "access", "exp": datetime.utcnow() + timedelta(minutes=ACCESS_EXP_MIN)})
-        return jwt.encode(to_encode, self.secret_key, algorithm=self.algorithm)
-
-    def create_refresh_token(self, data: dict) -> str:
-        to_encode = data.copy()
-        to_encode.update({"type": "refresh", "exp": datetime.utcnow() + timedelta(days=REFRESH_EXP_DAYS)})
-        token = jwt.encode(to_encode, self.secret_key, algorithm=self.algorithm)
-        # Optional allowlist (store suffix)
-        sub = data.get("sub", "unknown")
-        redis.set(f"refresh:{sub}:{token[-16:]}", "1", ex=REFRESH_EXP_DAYS*24*3600)
-        return token
-
-    def create_tokens(self, sub: str):
-        return (
-            self.create_access_token({"sub": sub}),
-            self.create_refresh_token({"sub": sub})
-        )
-
-    def decode_token(self, token: str) -> dict:
-        return jwt.decode(token, self.secret_key, algorithms=[self.algorithm])
-
-    # FastAPI dependency (validates Access token)
-    def verify_token(self, credentials: HTTPAuthorizationCredentials = Depends(security)):
-        try:
-            data = self.decode_token(credentials.credentials)
-            if data.get("type") != "access":
-                raise ValueError("Not an access token")
-            return data
-        except Exception:
+    def authenticate_user(self, username: str, password: str) -> User:
+        """
+        Authenticate user with username/email and password
+        """
+        user = self.db.query(User).filter(
+            (User.username == username) | (User.email == username)
+        ).first()
+        
+        if not user or not verify_password(password, user.password_hash):
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid token"
+                detail="Invalid credentials",
+            )
+        
+        if not user.email_verified:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Email not verified. Please verify your email before logging in.",
+            )
+            
+        return user
+
+    def register_user(self, username: str, email: str, password: str) -> User:
+        """
+        Register a new user and send verification email
+        """
+        # Check if user already exists
+        existing_user = self.db.query(User).filter(
+            (User.username == username) | (User.email == email)
+        ).first()
+        
+        if existing_user:
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="User with this username or email already exists",
+            )
+        
+        # Create new user
+        user = User(
+            username=username,
+            email=email,
+            password_hash=get_password_hash(password),
+        )
+        
+        try:
+            self.db.add(user)
+            self.db.commit()
+            self.db.refresh(user)
+            logger.info(f"New user registered: {username} ({email})")
+            
+        except Exception as e:
+            self.db.rollback()
+            logger.error(f"Failed to register user {username}: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to create user account"
+            )
+        
+        return user
+
+    def send_verification_email(self, user: User):
+        """
+        Send verification email to user (runs in background thread)
+        """
+        try:
+            # Generate OTP
+            otp = generate_otp(user.email)
+            
+            # Send verification email
+            success = email_service.send_verification_email(user.email, user.username, otp)
+            
+            if success:
+                logger.info(f"Verification email sent to {user.email}")
+            else:
+                logger.error(f"Failed to send verification email to {user.email}")
+                
+        except Exception as e:
+            logger.error(f"Error sending verification email to {user.email}: {e}")
+
+    def send_welcome_email(self, user: User):
+        """
+        Send welcome email after successful verification (runs in background thread)
+        """
+        try:
+            success = email_service.send_welcome_email(user.email, user.username)
+            
+            if success:
+                logger.info(f"Welcome email sent to {user.email}")
+            else:
+                logger.error(f"Failed to send welcome email to {user.email}")
+                
+        except Exception as e:
+            logger.error(f"Error sending welcome email to {user.email}: {e}")
+
+    def verify_user_email(self, email: str, otp: str) -> User:
+        """
+        Verify user email with OTP
+        """
+        from app.core.security import verify_otp
+        
+        if not verify_otp(email, otp):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid or expired OTP.",
+            )
+        
+        user = self.db.query(User).filter(User.email == email).first()
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found.",
+            )
+        
+        if user.email_verified:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Email is already verified.",
+            )
+        
+        # Update user verification status
+        user.email_verified = True
+        
+        try:
+            self.db.commit()
+            logger.info(f"User email verified: {email}")
+            
+            # Send welcome email in background
+            self._send_email_in_background(self.send_welcome_email, user)
+            
+        except Exception as e:
+            self.db.rollback()
+            logger.error(f"Failed to verify email for {email}: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to verify email"
+            )
+        
+        return user
+
+    def resend_verification_email(self, email: str):
+        """
+        Resend verification email
+        """
+        user = self.db.query(User).filter(User.email == email).first()
+        
+        # Always return success to prevent email enumeration
+        if user and not user.email_verified:
+            # Send verification email in background
+            self._send_email_in_background(self.send_verification_email, user)
+            logger.info(f"Verification email re-sent to {email}")
+        
+        return True
+
+    def initiate_password_reset(self, email: str):
+        """
+        Initiate password reset process
+        """
+        from app.core.security import generate_reset_token
+        
+        user = self.db.query(User).filter(User.email == email).first()
+        
+        # Always return success to prevent email enumeration
+        if user:
+            # Generate reset token
+            reset_token = generate_reset_token(user.email)
+            
+            # Send password reset email in background
+            self._send_password_reset_email(user, reset_token)
+            logger.info(f"Password reset initiated for {email}")
+        
+        return True
+
+    def _send_password_reset_email(self, user: User, reset_token: str):
+        """
+        Send password reset email (runs in background thread)
+        """
+        try:
+            success = email_service.send_password_reset_email(user.email, user.username, reset_token)
+            
+            if success:
+                logger.info(f"Password reset email sent to {user.email}")
+            else:
+                logger.error(f"Failed to send password reset email to {user.email}")
+                
+        except Exception as e:
+            logger.error(f"Error sending password reset email to {user.email}: {e}")
+
+    def reset_password(self, email: str, token: str, new_password: str) -> bool:
+        """
+        Reset user password with token
+        """
+        from app.core.security import verify_reset_token
+        
+        if not verify_reset_token(email, token):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid or expired password reset token.",
+            )
+        
+        user = self.db.query(User).filter(User.email == email).first()
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found.",
+            )
+        
+        # Update password
+        user.password_hash = get_password_hash(new_password)
+        
+        try:
+            self.db.commit()
+            logger.info(f"Password reset for user: {email}")
+            return True
+            
+        except Exception as e:
+            self.db.rollback()
+            logger.error(f"Failed to reset password for {email}: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to reset password"
             )
 
-    # ---- Email verify / reset tokens / OTP stored in Upstash Redis
-    def new_verify_email_token(self, email: str) -> str:
-        token = secrets.token_urlsafe(24)
-        redis.set(f"email_verify:{email}", token, ex=3600) # 1h
-        return token
+    def _send_email_in_background(self, email_func, *args, **kwargs):
+        """
+        Helper method to send emails in background threads
+        """
+        def email_worker():
+            try:
+                email_func(*args, **kwargs)
+            except Exception as e:
+                logger.error(f"Background email task failed: {e}")
+        
+        # Start background thread for email sending
+        email_thread = threading.Thread(target=email_worker)
+        email_thread.daemon = True  # Thread will exit when main thread exits
+        email_thread.start()
 
-    def check_verify_email_token(self, email: str, token: str) -> bool:
-        val = redis.get(f"email_verify:{email}")
-        return bool(val and val == token)
+    def create_tokens(self, username: str) -> tuple[str, str]:
+        """
+        Create access and refresh tokens for user
+        """
+        access_token = create_access_token({"sub": username})
+        refresh_token = create_refresh_token({"sub": username})
+        return access_token, refresh_token
 
-    def new_reset_token(self, email: str) -> str:
-        token = secrets.token_urlsafe(24)
-        redis.set(f"reset:{email}", token, ex=900) # 15 min
-        return token
+    def refresh_tokens(self, refresh_token: str) -> tuple[str, str]:
+        """
+        Refresh access token using refresh token
+        """
+        try:
+            payload = decode_token(refresh_token)
+            if payload.get("type") != "refresh":
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Invalid token type",
+                )
+            
+            username = payload.get("sub")
+            if not username:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Invalid token",
+                )
+                
+            return self.create_tokens(username)
+            
+        except JWTError:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid refresh token",
+            )
 
-    def check_reset_token(self, email: str, token: str) -> bool:
-        val = redis.get(f"reset:{email}")
-        return bool(val and val == token)
+    def get_user_by_email(self, email: str) -> User:
+        """
+        Get user by email address
+        """
+        return self.db.query(User).filter(User.email == email).first()
 
-    def new_otp(self, email: str) -> str:
-        code = f"{secrets.randbelow(900000)+100000}"
-        redis.set(f"otp:{email}", code, ex=300) # 5 min
-        return code
+    def get_user_by_username(self, username: str) -> User:
+        """
+        Get user by username
+        """
+        return self.db.query(User).filter(User.username == username).first()
 
-    def verify_otp(self, email: str, otp: str) -> bool:
-        val = redis.get(f"otp:{email}")
-        if val and val == otp:
-            redis.delete(f"otp:{email}")
-            return True
-        return False
+    def update_user_profile(self, user: User, update_data: dict) -> User:
+        """
+        Update user profile information
+        """
+        for key, value in update_data.items():
+            if hasattr(user, key) and key not in ['id', 'email_verified', 'created_at', 'updated_at']:
+                setattr(user, key, value)
+        
+        try:
+            self.db.commit()
+            self.db.refresh(user)
+            logger.info(f"User profile updated: {user.username}")
+            return user
+            
+        except Exception as e:
+            self.db.rollback()
+            logger.error(f"Failed to update user profile {user.username}: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to update profile"
+            )
+
+def get_auth_service(db: Session = Depends(get_db)) -> AuthService:
+    return AuthService(db)

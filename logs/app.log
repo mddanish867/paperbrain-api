@@ -1,0 +1,55 @@
+2025-08-29 21:22:56,982 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:00:21,649 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:01:19,172 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:16:11,196 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:38:45,617 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:42:48,953 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:44:00,639 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:45:34,456 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:54:02,757 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 22:58:38,825 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:02:47,880 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:09:21,506 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:09:33,466 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-29 23:09:33,467 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-29 23:09:33,600 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-29 23:10:26,955 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:10:35,459 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-29 23:10:35,460 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-29 23:10:35,606 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-29 23:11:41,971 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-29 23:18:32,302 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:18:53,202 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-29 23:19:45,193 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-29 23:19:45,195 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-29 23:19:45,505 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-29 23:24:26,528 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-29 23:24:26,554 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-29 23:26:21,237 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:26:30,524 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-29 23:26:56,646 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-29 23:26:56,654 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-29 23:26:56,806 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-29 23:30:21,297 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-29 23:30:21,301 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-29 23:51:36,068 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:51:39,798 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-29 23:51:47,649 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-29 23:51:47,661 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-29 23:51:47,798 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-29 23:52:49,495 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-29 23:52:49,505 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-29 23:53:02,409 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:53:04,912 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-29 23:53:11,968 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-29 23:53:11,968 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-29 23:53:12,123 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-29 23:53:49,519 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-29 23:53:49,519 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-29 23:59:10,730 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-29 23:59:13,281 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-29 23:59:20,210 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-29 23:59:20,210 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-29 23:59:20,348 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 00:00:15,678 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 00:00:15,679 - paperbrain - INFO - main:98 - Email configuration validated successfully

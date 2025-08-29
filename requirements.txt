@@ -36,3 +36,8 @@ pdf2image
 pytesseract
 upstash-redis
 email-validator
+bcrypt==3.2.0
+sqlalchemy
+pillow
+psycopg2-binary
+alembic  # for db migration

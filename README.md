@@ -108,20 +108,40 @@ Create a project + index
 Add PINECONE_API_KEY and PINECONE_ENVIRONMENT
 
 📂 Project Structure
-rag-chatbot-backend/
-│── app/
-│   ├── main.py             # FastAPI entrypoint
-│   ├── routes/             # API routes
-│   ├── services/           # RAG, Pinecone, Redis, etc.
-│   ├── auth/               # Auth & protected routes
-│   └── utils/              # Helpers
-│── data/                   # Uploaded PDFs
-│── .env                    # Environment variables (ignored in git)
-│── .gitignore
-│── requirements.txt
-│── README.md
 
-🔐 Security Notes
+paperbrain-api/
+├── app/
+│   ├── api/
+│   │   ├── v1/
+│   │   │   ├── endpoints/
+│   │   │   │   ├── auth.py
+│   │   │   │   ├── chat.py
+│   │   │   │   ├── documents.py
+│   │   │   │   └── __init__.py
+│   │   │   └── __init__.py
+│   ├── core/
+│   │   ├── config.py
+│   │   └── security.py
+│   ├── db/
+│   │   ├── base.py
+│   │   ├── session.py
+│   │   └── models/
+│   │       └── user.py
+│   ├── services/
+│   │   ├── auth.py
+│   │   ├── chat.py
+│   │   ├── email.py
+│   │   ├── vector_store.py
+│   │   └── __init__.py
+│   ├── utils/
+│   │   ├── logger.py
+│   │   └── validators.py
+│   └── main.py
+├── tests/
+├── requirements.txt
+└── .env
+
+
 
 Never commit .env → add it to .gitignore.
 
@@ -136,3 +156,7 @@ POST /upload → Upload a PDF
 POST /chat → Ask a question
 
 GET /health → Health check
+
+#Alembic Migrtion
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable)
+relation "paperbrainusers" does not exist
