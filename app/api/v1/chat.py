@@ -1,51 +1,42 @@
-from fastapi import APIRouter, Depends, HTTPException, status
-from pydantic import BaseModel
-from typing import List
+from fastapi import APIRouter, HTTPException, Depends
+from app.services.chat import chat_service
+from app.db.models.chat import ChatRequest, ChatResponse, ConversationHistory
 
-from app.services.chat import ChatService
-from app.core.security import get_current_user
-from app.utils.validators import validate_query
-from app.utils.logger import logger
 
 router = APIRouter(prefix="/chat", tags=["chat"])
-
-class ChatRequest(BaseModel):
-    message: str
-    session_id: str = "default"
-
-class ChatResponse(BaseModel):
-    response: str
-    sources: List[dict] = []
-
-class ConversationHistory(BaseModel):
-    messages: List[dict]
-
 @router.post("", response_model=ChatResponse)
-async def chat(
-    request: ChatRequest,
-    chat_service: ChatService = Depends(ChatService),
-    current_user: dict = Depends(get_current_user)
-):
-    validate_query(request.message)
-    logger.info(f"Chat request from {current_user['sub']}: {request.message[:100]}...")
-    
-    response = await chat_service.get_response(request.message, request.session_id)
-    return ChatResponse(**response)
+async def chat(request: ChatRequest):
+    """Get response from AI with optional document context"""
+    try:
+        response = await chat_service.get_response(
+            message=request.message,
+            session_id=request.session_id or "default"
+        )
+        return ChatResponse(**response)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Chat error: {str(e)}")
 
 @router.get("/history/{session_id}", response_model=ConversationHistory)
-async def get_chat_history(
-    session_id: str,
-    chat_service: ChatService = Depends(ChatService),
-    current_user: dict = Depends(get_current_user)
-):
+async def get_chat_history(session_id: str):
+    """Get chat history for a session"""
     history = chat_service.get_conversation_history(session_id)
-    return ConversationHistory(messages=history)
+    return ConversationHistory(messages=history, session_id=session_id)
 
 @router.delete("/history/{session_id}")
-async def clear_chat_history(
-    session_id: str,
-    chat_service: ChatService = Depends(ChatService),
-    current_user: dict = Depends(get_current_user)
-):
+async def clear_chat_history(session_id: str):
+    """Clear chat history for a session"""
     chat_service.clear_conversation_history(session_id)
-    return {"message": "Conversation history cleared"}
+    return {"message": f"Chat history cleared for session {session_id}"}
+
+@router.get("/sessions")
+async def list_sessions():
+    """List available chat sessions (placeholder - would need implementation)"""
+    return {"sessions": []}
+
+@router.get("/session/{session_id}/info")
+async def get_session_info(session_id: str):
+    """Get information about a specific session"""
+    session_info = chat_service.get_session_info(session_id)
+    if not session_info:
+        raise HTTPException(status_code=404, detail="Session not found")
+    return session_info

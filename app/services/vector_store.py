@@ -82,6 +82,45 @@ class FaissVectorStore(IVectorStore):
                 results.append(ch)
         return results
 
+    async def search_with_filter(self, query: str, k: int = 5, filter_dict: Optional[Dict] = None) -> List[Dict]:
+        """Fixed search with filter functionality"""
+        if self.index.ntotal == 0:
+            return []
+        
+        # First do a broader search to get more candidates
+        search_k = min(k * 5, self.index.ntotal)  # Search more broadly first
+        q = self.embedding_model.encode([query])
+        q = q / self.np.linalg.norm(q, axis=1, keepdims=True)
+        scores, indices = self.index.search(q.astype('float32'), search_k)
+        
+        results = []
+        for score, idx in zip(scores[0], indices[0]):
+            if idx == -1 or idx not in self.chunks:
+                continue
+                
+            chunk = self.chunks[idx]
+            
+            # Apply filters
+            if filter_dict:
+                matches = True
+                for key, value in filter_dict.items():
+                    # Check if the chunk has the required attribute and value
+                    if chunk.get(key) != value:
+                        matches = False
+                        break
+                if not matches:
+                    continue
+            
+            ch = chunk.copy()
+            ch['similarity_score'] = float(score)
+            results.append(ch)
+            
+            # Stop when we have enough results
+            if len(results) >= k:
+                break
+        
+        return results
+
     async def list_documents(self) -> List[Dict]:
         return list(self.documents.values())
 
@@ -113,8 +152,14 @@ class FaissVectorStore(IVectorStore):
             new_chunks[i] = data
         self.chunks = new_chunks
         
-        for doc in self.documents.values():
-            doc['chunk_ids'] = list(range(len(self.chunks)))
+        # Fix: Update chunk_ids correctly for each document
+        for doc_id, doc_info in self.documents.items():
+            doc_chunk_ids = []
+            for chunk_idx, chunk_data in new_chunks.items():
+                if chunk_data.get('doc_id') == doc_id:
+                    doc_chunk_ids.append(chunk_idx)
+            doc_info['chunk_ids'] = doc_chunk_ids
+            
         self._save_index()
 
     def _save_index(self):
@@ -202,6 +247,38 @@ class PineconeVectorStore(IVectorStore):
         q = self.embedding_model.encode([query])
         q = q / np.linalg.norm(q, axis=1, keepdims=True)
         res = self.index.query(vector=q[0].tolist(), top_k=k, include_metadata=True)
+        
+        results = []
+        for match in res.matches or []:
+            md = match.metadata or {}
+            results.append({
+                "text": md.get("text", ""),
+                "chunk_index": md.get("chunk_index", 0),
+                "filename": md.get("filename", "Unknown"),
+                "similarity_score": float(match.score),
+                "doc_id": md.get("doc_id")
+            })
+        return results
+
+    async def search_with_filter(self, query: str, k: int = 5, filter_dict: Optional[Dict] = None) -> List[Dict]:
+        import numpy as np
+        
+        q = self.embedding_model.encode([query])
+        q = q / np.linalg.norm(q, axis=1, keepdims=True)
+        
+        # Build filter for Pinecone
+        filter_expr = None
+        if filter_dict:
+            filter_expr = {}
+            for key, value in filter_dict.items():
+                filter_expr[key] = {"$eq": value}
+        
+        res = self.index.query(
+            vector=q[0].tolist(), 
+            top_k=k, 
+            include_metadata=True,
+            filter=filter_expr
+        )
         
         results = []
         for match in res.matches or []:

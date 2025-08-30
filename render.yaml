@@ -23,7 +23,7 @@ services:
         value: "30"
 
       # OpenAI
-      - key: OPENAI_API_KEY
+      - key: GEMINI_API_KEY
         sync: false
 
       # Redis (Upstash)

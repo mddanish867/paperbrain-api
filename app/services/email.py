@@ -35,89 +35,132 @@ class EmailService:
         
         return True
 
+    # def send_email(self, to_email: str, subject: str, html_content: str, text_content: str = None) -> bool:
+    #     """Send an email using Brevo SMTP"""
+    #     if not self._validate_configuration():
+    #         logger.error("Brevo SMTP configuration validation failed")
+    #         return False
+        
+    #     if not text_content:
+    #         # Create basic plain text version from HTML
+    #         import re
+    #         text_content = re.sub(r'<[^>]*>', '', html_content)
+    #         text_content = re.sub(r'\s+', ' ', text_content).strip()
+
+    #     # Create message
+    #     msg = MIMEMultipart("alternative")
+    #     msg["Subject"] = subject
+    #     msg["From"] = formataddr(("PaperBrain", self.smtp_from))
+    #     msg["To"] = to_email
+        
+    #     # Add headers for better deliverability
+    #     msg["X-Mailer"] = "PaperBrain/1.0"
+    #     msg["X-Accept-Language"] = "en"
+        
+    #     # Attach both plain text and HTML versions
+    #     msg.attach(MIMEText(text_content, "plain"))
+    #     msg.attach(MIMEText(html_content, "html"))
+        
+    #     try:
+    #         # Connect to Brevo SMTP server
+    #         logger.info(f"Connecting to Brevo SMTP: {self.smtp_host}:{self.smtp_port}")
+            
+    #         with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=30) as server:
+    #             # Debug information
+    #             logger.debug(f"SMTP server: {self.smtp_host}:{self.smtp_port}")
+    #             logger.debug(f"SMTP user: {self.smtp_user}")
+                
+    #             # Identify ourselves
+    #             server.ehlo()
+                
+    #             # Start TLS encryption (required for Brevo)
+    #             if server.has_extn('STARTTLS'):
+    #                 server.starttls()
+    #                 server.ehlo()  # Re-identify after TLS
+    #                 logger.debug("TLS encryption started")
+                
+    #             # Login to Brevo SMTP
+    #             logger.debug("Authenticating with Brevo SMTP...")
+    #             server.login(self.smtp_user, self.smtp_pass)
+    #             logger.debug("SMTP authentication successful")
+                
+    #             # Send email
+    #             logger.info(f"Sending email to: {to_email}")
+    #             server.sendmail(self.smtp_from, to_email, msg.as_string())
+    #             logger.debug("Email sent successfully")
+                
+    #         logger.info(f"Email sent successfully to {to_email}")
+    #         return True
+            
+    #     except smtplib.SMTPAuthenticationError as e:
+    #         logger.error(f"Brevo SMTP authentication failed: {e}")
+    #         logger.error("Please check:")
+    #         logger.error("- SMTP_USER is your Brevo login email (not from address)")
+    #         logger.error("- SMTP_PASS is your Brevo SMTP key (not account password)")
+    #         logger.error("- SMTP key has SMTP permissions in Brevo dashboard")
+    #         return False
+            
+    #     except smtplib.SMTPConnectError as e:
+    #         logger.error(f"Cannot connect to Brevo SMTP server: {e}")
+    #         logger.error("Please check:")
+    #         logger.error("- SMTP_HOST is 'smtp-relay.brevo.com'")
+    #         logger.error("- SMTP_PORT is 587")
+    #         logger.error("- Network/firewall allows outbound connections on port 587")
+    #         return False
+            
+    #     except smtplib.SMTPSenderRefused as e:
+    #         logger.error(f"Sender address refused: {e}")
+    #         logger.error("Please check:")
+    #         logger.error("- SMTP_FROM is a verified sender in Brevo dashboard")
+    #         logger.error("- Sender email is properly verified in Brevo")
+    #         return False
+            
+    #     except Exception as e:
+    #         logger.error(f"Failed to send email via Brevo: {str(e)}")
+    #         return False
+
     def send_email(self, to_email: str, subject: str, html_content: str, text_content: str = None) -> bool:
-        """Send an email using Brevo SMTP"""
+        """Send an email using Brevo SMTP and log queue info"""
         if not self._validate_configuration():
             logger.error("Brevo SMTP configuration validation failed")
             return False
-        
         if not text_content:
-            # Create basic plain text version from HTML
             import re
             text_content = re.sub(r'<[^>]*>', '', html_content)
             text_content = re.sub(r'\s+', ' ', text_content).strip()
-
-        # Create message
+        
+        
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
         msg["From"] = formataddr(("PaperBrain", self.smtp_from))
         msg["To"] = to_email
-        
-        # Add headers for better deliverability
-        msg["X-Mailer"] = "PaperBrain/1.0"
-        msg["X-Accept-Language"] = "en"
-        
-        # Attach both plain text and HTML versions
         msg.attach(MIMEText(text_content, "plain"))
         msg.attach(MIMEText(html_content, "html"))
-        
+
         try:
-            # Connect to Brevo SMTP server
-            logger.info(f"Connecting to Brevo SMTP: {self.smtp_host}:{self.smtp_port}")
-            
             with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=30) as server:
-                # Debug information
-                logger.debug(f"SMTP server: {self.smtp_host}:{self.smtp_port}")
-                logger.debug(f"SMTP user: {self.smtp_user}")
-                
-                # Identify ourselves
-                server.ehlo()
-                
-                # Start TLS encryption (required for Brevo)
-                if server.has_extn('STARTTLS'):
-                    server.starttls()
-                    server.ehlo()  # Re-identify after TLS
-                    logger.debug("TLS encryption started")
-                
-                # Login to Brevo SMTP
-                logger.debug("Authenticating with Brevo SMTP...")
-                server.login(self.smtp_user, self.smtp_pass)
-                logger.debug("SMTP authentication successful")
-                
-                # Send email
-                logger.info(f"Sending email to: {to_email}")
-                server.sendmail(self.smtp_from, to_email, msg.as_string())
-                logger.debug("Email sent successfully")
-                
-            logger.info(f"Email sent successfully to {to_email}")
-            return True
+                    server.ehlo()
+                    if server.has_extn('STARTTLS'):
+                        server.starttls()
+                        server.ehlo()
             
+                    server.login(self.smtp_user, self.smtp_pass)
+                    # Send email
+                    
+                    response = server.sendmail(self.smtp_from, to_email, msg.as_string())
+
+                    # ✅ Log queue info from server response
+                    logger.info(f"Email sent to {to_email}. SMTP server response: {response.decode() if isinstance(response, bytes) else response}")
+
+            return True
+
         except smtplib.SMTPAuthenticationError as e:
             logger.error(f"❌ Brevo SMTP authentication failed: {e}")
-            logger.error("💡 Please check:")
-            logger.error("   - SMTP_USER is your Brevo login email (not from address)")
-            logger.error("   - SMTP_PASS is your Brevo SMTP key (not account password)")
-            logger.error("   - SMTP key has SMTP permissions in Brevo dashboard")
             return False
-            
-        except smtplib.SMTPConnectError as e:
-            logger.error(f"❌ Cannot connect to Brevo SMTP server: {e}")
-            logger.error("💡 Please check:")
-            logger.error("   - SMTP_HOST is 'smtp-relay.brevo.com'")
-            logger.error("   - SMTP_PORT is 587")
-            logger.error("   - Network/firewall allows outbound connections on port 587")
-            return False
-            
-        except smtplib.SMTPSenderRefused as e:
-            logger.error(f"❌ Sender address refused: {e}")
-            logger.error("💡 Please check:")
-            logger.error("   - SMTP_FROM is a verified sender in Brevo dashboard")
-            logger.error("   - Sender email is properly verified in Brevo")
-            return False
-            
         except Exception as e:
             logger.error(f"❌ Failed to send email via Brevo: {str(e)}")
             return False
+
 
     def send_verification_email(self, to_email: str, username: str, otp: str) -> bool:
         """Send email verification OTP using Brevo"""
@@ -148,7 +191,7 @@ class EmailService:
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>📚 PaperBrain</h1>
+                    <h1>PaperBrain</h1>
                     <p>AI-Powered Document Intelligence</p>
                 </div>
                 
@@ -240,7 +283,7 @@ Need help? Contact our support team at support@paperbrain.com
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🔒 PaperBrain</h1>
+                    <h1>PaperBrain</h1>
                     <p>Password Reset Request</p>
                 </div>
                 
@@ -328,7 +371,7 @@ This is an automated message. Please do not reply to this email.
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🎉 Welcome to PaperBrain!</h1>
+                    <h1>elcome to PaperBrain!</h1>
                     <p>Your Account is Ready</p>
                 </div>
                 

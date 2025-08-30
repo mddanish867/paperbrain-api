@@ -60,3 +60,313 @@
 2025-08-30 00:00:31,134 - paperbrain - INFO - main:84 - Database connection successful
 2025-08-30 00:01:13,677 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
 2025-08-30 00:01:13,678 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 09:45:02,436 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 09:45:05,911 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 09:45:15,614 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 09:45:15,614 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 09:45:15,761 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 09:46:41,384 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 09:46:41,524 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 09:55:38,000 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 09:55:41,036 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 09:55:49,209 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 09:55:49,209 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 09:55:49,357 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 09:57:21,991 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 09:57:21,992 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 10:05:46,512 - paperbrain - INFO - auth:75 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 10:05:46,781 - paperbrain - INFO - auth:86 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 10:05:46,992 - paperbrain - INFO - email:66 - Connecting to Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 10:05:47,860 - paperbrain - INFO - email:88 - Sending email to: mddanish867@gmail.com
+2025-08-30 10:05:48,263 - paperbrain - INFO - email:92 - Email sent successfully to mddanish867@gmail.com
+2025-08-30 10:29:07,164 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 10:29:09,602 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 10:29:18,263 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 10:29:18,264 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 10:29:18,426 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 10:30:04,869 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 10:30:04,875 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 10:31:18,480 - paperbrain - INFO - auth:75 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 10:31:18,852 - paperbrain - INFO - auth:86 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 10:31:19,085 - paperbrain - INFO - email:66 - Connecting to Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 10:31:23,753 - paperbrain - ERROR - email:96 - Brevo SMTP authentication failed: (535, b'5.7.8 Authentication failed')
+2025-08-30 10:31:23,754 - paperbrain - ERROR - email:97 - Please check:
+2025-08-30 10:31:23,754 - paperbrain - ERROR - email:98 - - SMTP_USER is your Brevo login email (not from address)
+2025-08-30 10:31:23,754 - paperbrain - ERROR - email:99 - - SMTP_PASS is your Brevo SMTP key (not account password)
+2025-08-30 10:31:23,755 - paperbrain - ERROR - email:100 - - SMTP key has SMTP permissions in Brevo dashboard
+2025-08-30 11:08:30,060 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:08:40,096 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 11:08:40,096 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 11:08:40,238 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 11:09:34,600 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 11:09:34,604 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 11:27:32,074 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:27:34,686 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 11:27:42,385 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 11:27:42,386 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 11:27:42,516 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 11:28:30,599 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 11:28:30,600 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 11:28:36,618 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:28:38,778 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 11:28:44,877 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 11:28:44,878 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 11:28:45,029 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 11:29:16,643 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 11:29:16,645 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 11:32:01,702 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:32:03,877 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 11:32:10,290 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 11:32:10,290 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 11:32:10,437 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 11:32:41,945 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 11:32:41,946 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 11:34:27,044 - paperbrain - INFO - auth:75 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 11:34:27,303 - paperbrain - INFO - auth:86 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 11:34:27,599 - paperbrain - INFO - email:66 - Connecting to Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:34:28,978 - paperbrain - ERROR - email:96 - Brevo SMTP authentication failed: (535, b'5.7.8 Authentication failed')
+2025-08-30 11:34:28,979 - paperbrain - ERROR - email:97 - Please check:
+2025-08-30 11:34:28,979 - paperbrain - ERROR - email:98 - - SMTP_USER is your Brevo login email (not from address)
+2025-08-30 11:34:28,979 - paperbrain - ERROR - email:99 - - SMTP_PASS is your Brevo SMTP key (not account password)
+2025-08-30 11:34:28,980 - paperbrain - ERROR - email:100 - - SMTP key has SMTP permissions in Brevo dashboard
+2025-08-30 11:36:53,379 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:36:58,650 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 11:37:05,755 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 11:37:05,755 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 11:37:05,910 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 11:37:38,026 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 11:37:38,028 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 11:37:48,594 - paperbrain - INFO - auth:75 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 11:37:48,892 - paperbrain - INFO - auth:86 - New user registered: mddanish867 (mddanish867@gmail.com)
+2025-08-30 11:37:49,076 - paperbrain - INFO - email:66 - Connecting to Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:37:49,862 - paperbrain - INFO - email:88 - Sending email to: mddanish867@gmail.com
+2025-08-30 11:37:50,236 - paperbrain - INFO - email:92 - Email sent successfully to mddanish867@gmail.com
+2025-08-30 11:44:00,728 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:44:03,413 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 11:44:11,018 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 11:44:11,018 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 11:44:11,167 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 11:44:51,398 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 11:44:51,399 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 11:45:51,424 - paperbrain - INFO - auth:75 - New user registered: akhtar298 (akhtardanish298@gmail.com)
+2025-08-30 11:46:25,957 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 11:46:28,126 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 11:46:34,573 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 11:46:34,573 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 11:46:34,706 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 11:47:05,172 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 11:47:05,173 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 11:47:48,233 - paperbrain - INFO - auth:75 - New user registered: akhtar298 (akhtardanish298@gmail.com)
+2025-08-30 12:00:16,685 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 12:00:19,381 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 12:00:32,700 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 12:00:35,242 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 12:00:44,095 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 12:00:44,096 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 12:00:44,263 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 12:01:30,972 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 12:01:30,974 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 12:01:45,701 - paperbrain - INFO - auth:75 - New user registered: akhtar298 (akhtardanish298@gmail.com)
+2025-08-30 12:01:45,998 - paperbrain - INFO - auth:86 - New user registered: akhtar298 (akhtardanish298@gmail.com)
+2025-08-30 12:01:47,365 - paperbrain - INFO - email:153 - Email sent to akhtardanish298@gmail.com. SMTP server response: {}
+2025-08-30 12:06:49,761 - paperbrain - INFO - auth:124 - User email verified: akhtardanish298@gmail.com
+2025-08-30 12:08:40,975 - paperbrain - INFO - documents:35 - Document upload from akhtar298: 2cbd11bd-e4ba-49c1-9880-b37ed05f5488.pdf
+2025-08-30 12:08:41,075 - paperbrain - ERROR - documents:84 - Error processing document: object NoneType can't be used in 'await' expression
+2025-08-30 12:20:06,005 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 12:20:09,054 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 12:20:19,018 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 12:20:19,018 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 12:20:19,183 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 12:21:06,598 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 0, 'total_chunks': 0, 'index_size': 0, 'embedding_dimension': 384}
+2025-08-30 12:21:06,599 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 12:21:07,805 - paperbrain - INFO - documents:35 - Document upload from akhtar298: 2cbd11bd-e4ba-49c1-9880-b37ed05f5488.pdf
+2025-08-30 12:21:11,988 - paperbrain - INFO - document_processor:35 - Processing PDF: 2cbd11bd-e4ba-49c1-9880-b37ed05f5488.pdf
+2025-08-30 12:21:12,154 - paperbrain - ERROR - document_processor:93 - Error reading PDF file: PyCryptodome is required for AES algorithm
+2025-08-30 12:21:12,154 - paperbrain - ERROR - document_processor:74 - Failed to process PDF 2cbd11bd-e4ba-49c1-9880-b37ed05f5488.pdf: PyCryptodome is required for AES algorithm
+2025-08-30 12:21:12,155 - paperbrain - ERROR - documents:79 - Error processing document: Failed to process PDF: PyCryptodome is required for AES algorithm
+2025-08-30 12:22:16,182 - paperbrain - INFO - documents:35 - Document upload from akhtar298: bill.pdf
+2025-08-30 12:22:21,282 - paperbrain - INFO - document_processor:35 - Processing PDF: bill.pdf
+2025-08-30 12:22:21,572 - paperbrain - INFO - document_processor:70 - Processed bill.pdf into 10 chunks
+2025-08-30 12:22:24,272 - paperbrain - INFO - documents:61 - Document processed: bill.pdf -> 10 chunks
+2025-08-30 12:28:11,833 - paperbrain - INFO - documents:104 - Document deleted by akhtar298: 481a0949-b349-4388-9fa5-b00b379c7936
+2025-08-30 12:29:24,855 - paperbrain - INFO - documents:35 - Document upload from akhtar298: bill.pdf
+2025-08-30 12:29:28,627 - paperbrain - INFO - document_processor:35 - Processing PDF: bill.pdf
+2025-08-30 12:29:32,190 - paperbrain - INFO - document_processor:70 - Processed bill.pdf into 10 chunks
+2025-08-30 12:29:33,407 - paperbrain - INFO - documents:61 - Document processed: bill.pdf -> 10 chunks
+2025-08-30 12:41:05,314 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 12:41:07,917 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 12:41:15,559 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 12:41:15,560 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 12:41:15,718 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 12:42:00,674 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 1, 'total_chunks': 10, 'index_size': 10, 'embedding_dimension': 384}
+2025-08-30 12:42:00,677 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 12:42:47,781 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-30 12:44:12,453 - paperbrain - INFO - chat:53 - Chat request from akhtar298: what is this document is all about?...
+2025-08-30 12:44:12,977 - paperbrain - INFO - analytics:42 - Analytics event: chat_request - User: akhtar298
+2025-08-30 12:44:13,245 - paperbrain - INFO - chat:37 - RAG search for: what is this document is all about?...
+2025-08-30 12:44:14,797 - paperbrain - INFO - chat:61 - Calling OpenAI...
+2025-08-30 12:44:21,443 - paperbrain - ERROR - chat:86 - Chat error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-08-30 12:44:21,965 - paperbrain - INFO - analytics:42 - Analytics event: chat_error - User: None
+2025-08-30 12:44:22,495 - paperbrain - INFO - analytics:42 - Analytics event: chat_response_time - User: akhtar298
+2025-08-30 12:59:57,380 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 13:00:01,835 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 13:00:09,278 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 13:00:09,280 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 13:00:09,425 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 13:02:40,235 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 1, 'total_chunks': 10, 'index_size': 10, 'embedding_dimension': 384}
+2025-08-30 13:02:40,242 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 13:21:04,308 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 13:21:07,278 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 13:21:13,098 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 13:21:13,098 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 13:21:13,290 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 13:22:05,350 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 1, 'total_chunks': 10, 'index_size': 10, 'embedding_dimension': 384}
+2025-08-30 13:22:05,350 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 13:22:19,785 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 13:24:24,266 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-30 13:24:54,493 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 13:24:54,826 - paperbrain - INFO - chat:53 - Chat request from akhtar298: what is this document is all about?...
+2025-08-30 13:24:55,427 - paperbrain - INFO - analytics:42 - Analytics event: chat_request - User: akhtar298
+2025-08-30 13:24:55,747 - paperbrain - INFO - chat:52 - RAG search for: what is this document is all about?...
+2025-08-30 13:24:57,858 - paperbrain - INFO - chat:80 - Calling Gemini API...
+2025-08-30 13:25:03,278 - paperbrain - INFO - analytics:42 - Analytics event: chat_answered - User: None
+2025-08-30 13:25:03,888 - paperbrain - INFO - analytics:42 - Analytics event: chat_response_time - User: akhtar298
+2025-08-30 13:44:41,581 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 13:44:41,588 - paperbrain - INFO - chat:53 - Chat request from akhtar298: How much is the bill?...
+2025-08-30 13:44:42,187 - paperbrain - INFO - analytics:42 - Analytics event: chat_request - User: akhtar298
+2025-08-30 13:44:42,497 - paperbrain - INFO - chat:52 - RAG search for: How much is the bill?...
+2025-08-30 13:44:42,667 - paperbrain - INFO - chat:80 - Calling Gemini API...
+2025-08-30 13:44:47,168 - paperbrain - INFO - analytics:42 - Analytics event: chat_answered - User: None
+2025-08-30 13:44:47,758 - paperbrain - INFO - analytics:42 - Analytics event: chat_response_time - User: akhtar298
+2025-08-30 13:45:16,247 - paperbrain - INFO - documents:35 - Document upload from akhtar298: Danish_Akhtar_Resume2.pdf
+2025-08-30 13:45:21,813 - paperbrain - INFO - document_processor:35 - Processing PDF: Danish_Akhtar_Resume2.pdf
+2025-08-30 13:45:22,063 - paperbrain - INFO - document_processor:70 - Processed Danish_Akhtar_Resume2.pdf into 5 chunks
+2025-08-30 13:45:23,103 - paperbrain - INFO - documents:61 - Document processed: Danish_Akhtar_Resume2.pdf -> 5 chunks
+2025-08-30 13:46:28,478 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 13:46:28,483 - paperbrain - INFO - chat:53 - Chat request from akhtar298: What is the name of the candidate...
+2025-08-30 13:46:29,122 - paperbrain - INFO - analytics:42 - Analytics event: chat_request - User: akhtar298
+2025-08-30 13:46:29,412 - paperbrain - INFO - chat:52 - RAG search for: What is the name of the candidate...
+2025-08-30 13:46:29,456 - paperbrain - INFO - chat:80 - Calling Gemini API...
+2025-08-30 13:46:34,072 - paperbrain - INFO - analytics:42 - Analytics event: chat_answered - User: None
+2025-08-30 13:46:34,693 - paperbrain - INFO - analytics:42 - Analytics event: chat_response_time - User: akhtar298
+2025-08-30 13:47:39,551 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 13:47:40,454 - paperbrain - INFO - analytics:42 - Analytics event: chat_history_retrieved - User: akhtar298
+2025-08-30 13:48:32,727 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 13:48:32,729 - paperbrain - INFO - chat:53 - Chat request from akhtar298: What is the name of the candidate...
+2025-08-30 13:48:33,348 - paperbrain - INFO - analytics:42 - Analytics event: chat_request - User: akhtar298
+2025-08-30 13:48:34,257 - paperbrain - INFO - analytics:42 - Analytics event: chat_cache_hit - User: None
+2025-08-30 13:48:34,258 - paperbrain - INFO - chat:40 - Cache hit for chat query
+2025-08-30 13:48:35,737 - paperbrain - INFO - analytics:42 - Analytics event: chat_response_time - User: akhtar298
+2025-08-30 13:50:51,374 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 13:50:51,379 - paperbrain - INFO - chat:53 - Chat request from akhtar298: What is the summary of the document of the candidate?...
+2025-08-30 13:50:51,983 - paperbrain - INFO - analytics:42 - Analytics event: chat_request - User: akhtar298
+2025-08-30 13:50:52,292 - paperbrain - INFO - chat:52 - RAG search for: What is the summary of the document of the candidate?...
+2025-08-30 13:50:52,337 - paperbrain - INFO - chat:80 - Calling Gemini API...
+2025-08-30 13:50:57,083 - paperbrain - INFO - analytics:42 - Analytics event: chat_answered - User: None
+2025-08-30 13:50:57,703 - paperbrain - INFO - analytics:42 - Analytics event: chat_response_time - User: akhtar298
+2025-08-30 17:14:41,660 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-30 17:15:15,891 - paperbrain - INFO - analytics:42 - Analytics event: chat_sessions_listed - User: akhtar298
+2025-08-30 17:16:16,153 - paperbrain - INFO - chat:22 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 17:16:16,882 - paperbrain - INFO - chat:216 - Cleared conversation history for session: default
+2025-08-30 17:16:17,582 - paperbrain - INFO - analytics:42 - Analytics event: chat_history_cleared - User: akhtar298
+2025-08-30 17:16:17,583 - paperbrain - INFO - chat:186 - Cleared 3 messages for session default
+2025-08-30 17:16:44,463 - paperbrain - INFO - analytics:42 - Analytics event: chat_sessions_listed - User: akhtar298
+2025-08-30 21:06:56,889 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:07:01,450 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:07:10,244 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 21:07:10,245 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 21:07:10,461 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 21:13:35,838 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:13:40,486 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:16:42,599 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:16:46,182 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:30:01,262 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:30:24,351 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:30:26,813 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:30:30,112 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:30:31,978 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:31:25,663 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:31:28,382 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:32:40,251 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:33:06,588 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:33:12,065 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:35:27,955 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:36:44,515 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:36:55,130 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:37:58,175 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 21:44:11,920 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:44:15,645 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:45:06,582 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 21:45:13,463 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 21:45:13,463 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 21:45:13,661 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 21:45:18,604 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 2, 'total_chunks': 15, 'index_size': 15, 'embedding_dimension': 384}
+2025-08-30 21:45:18,606 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 21:45:27,405 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:45:30,152 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:46:43,256 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 21:46:45,495 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 21:47:24,786 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 21:47:31,467 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 21:47:31,468 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 21:47:31,636 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 21:47:37,398 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 2, 'total_chunks': 15, 'index_size': 15, 'embedding_dimension': 384}
+2025-08-30 21:47:37,399 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 21:48:27,849 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-30 21:49:00,197 - paperbrain - INFO - document_processor:35 - Processing PDF: Danish_Akhtar_Resume 2.pdf
+2025-08-30 21:49:00,734 - paperbrain - INFO - document_processor:70 - Processed Danish_Akhtar_Resume 2.pdf into 5 chunks
+2025-08-30 21:49:08,850 - paperbrain - INFO - chat:59 - Created document session doc_03541500e5d4 for doc 2d9c3792-4c0b-4467-9243-d97dae1d7d60
+2025-08-30 21:51:38,639 - paperbrain - INFO - chat:75 - Using document context from session: 2d9c3792-4c0b-4467-9243-d97dae1d7d60
+2025-08-30 21:52:15,594 - paperbrain - INFO - chat:139 - Calling Gemini API...
+2025-08-30 21:53:43,908 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-30 21:54:35,859 - paperbrain - INFO - document_processor:35 - Processing PDF: DSA.pdf
+2025-08-30 21:54:35,922 - paperbrain - ERROR - document_processor:93 - Error reading PDF file: PyCryptodome is required for AES algorithm
+2025-08-30 21:54:35,922 - paperbrain - ERROR - document_processor:74 - Failed to process PDF DSA.pdf: PyCryptodome is required for AES algorithm
+2025-08-30 21:54:58,939 - paperbrain - INFO - document_processor:35 - Processing PDF: DSA Day-wise.pdf
+2025-08-30 21:55:01,657 - paperbrain - INFO - document_processor:70 - Processed DSA Day-wise.pdf into 26 chunks
+2025-08-30 21:55:11,136 - paperbrain - INFO - chat:59 - Created document session doc_805d51c273b6 for doc a9ac7fe7-b9d4-4e7e-840d-f63f651f0cfc
+2025-08-30 21:55:55,028 - paperbrain - INFO - chat:75 - Using document context from session: a9ac7fe7-b9d4-4e7e-840d-f63f651f0cfc
+2025-08-30 22:40:09,098 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-30 22:40:12,191 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-30 22:41:11,808 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-30 22:41:19,523 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-30 22:41:19,524 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-30 22:41:19,694 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-30 22:41:26,810 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 3, 'total_chunks': 41, 'index_size': 41, 'embedding_dimension': 384}
+2025-08-30 22:41:26,814 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-30 22:42:16,666 - paperbrain - INFO - chat:77 - Using document context from session: a9ac7fe7-b9d4-4e7e-840d-f63f651f0cfc for document: DSA Day-wise.pdf
+2025-08-30 22:42:16,976 - paperbrain - INFO - chat:100 - Searching within document: a9ac7fe7-b9d4-4e7e-840d-f63f651f0cfc
+2025-08-30 22:42:18,666 - paperbrain - INFO - chat:108 - Document-filtered search returned 5 chunks
+2025-08-30 22:42:18,667 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:43:29,330 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:43:29,354 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:43:29,356 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:44:35,671 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:44:35,723 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:44:35,724 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:45:35,134 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:45:35,191 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:45:35,191 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:46:26,206 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:46:26,244 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:46:26,245 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:47:05,917 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:47:05,970 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:47:06,281 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:48:31,055 - paperbrain - INFO - chat:87 - Cache hit for chat query
+2025-08-30 22:49:12,302 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:49:12,351 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:49:12,352 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:50:31,358 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:50:31,478 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:50:31,479 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-30 22:52:01,254 - paperbrain - INFO - document_processor:35 - Processing PDF: Marriage Proposal.pdf
+2025-08-30 22:52:01,421 - paperbrain - INFO - document_processor:70 - Processed Marriage Proposal.pdf into 1 chunks
+2025-08-30 22:52:07,619 - paperbrain - INFO - chat:59 - Created document session doc_fdb21e299fd4 for doc daea7319-a422-4a7d-9da9-7714239e95a3
+2025-08-30 22:52:56,182 - paperbrain - INFO - chat:77 - Using document context from session: daea7319-a422-4a7d-9da9-7714239e95a3 for document: Marriage Proposal.pdf
+2025-08-30 22:52:56,462 - paperbrain - INFO - chat:100 - Searching within document: daea7319-a422-4a7d-9da9-7714239e95a3
+2025-08-30 22:52:56,814 - paperbrain - INFO - chat:108 - Document-filtered search returned 0 chunks
+2025-08-30 22:52:56,816 - paperbrain - WARNING - chat:123 - No relevant chunks found. Vector store stats: {'backend': 'faiss', 'total_documents': 3, 'total_chunks': 41, 'index_size': 41, 'embedding_dimension': 384}
+2025-08-30 22:53:43,364 - paperbrain - INFO - chat:115 - Performing general search across all documents
+2025-08-30 22:53:43,417 - paperbrain - INFO - chat:118 - General search returned 5 chunks
+2025-08-30 22:53:43,418 - paperbrain - INFO - chat:159 - Calling Gemini API...

@@ -27,9 +27,11 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(30, env="ACCESS_TOKEN_EXPIRE_MINUTES")
     REFRESH_TOKEN_EXPIRE_DAYS: int = Field(7, env="REFRESH_TOKEN_EXPIRE_DAYS")
     
-    # OpenAI
-    OPENAI_API_KEY: str = Field(..., env="OPENAI_API_KEY")
-    OPENAI_CHAT_MODEL: str = Field("gpt-3.5-turbo", env="OPENAI_CHAT_MODEL")
+    # Google Gemini (replaced OpenAI)
+    GEMINI_API_KEY: str = Field(..., env="GEMINI_API_KEY")
+    GEMINI_MODEL: str = Field("gemini-1.5-flash", env="GEMINI_MODEL")  # or gemini-1.5-pro
+    GEMINI_TEMPERATURE: float = Field(0.7, env="GEMINI_TEMPERATURE")
+    GEMINI_MAX_TOKENS: int = Field(500, env="GEMINI_MAX_TOKENS")
     
     # Email - Brevo SMTP Configuration
     SMTP_HOST: str = Field(..., env="SMTP_HOST")
@@ -59,7 +61,6 @@ class Settings(BaseSettings):
             return ["*"]
         return self.CORS_ORIGINS
 
-
     # File Upload
     MAX_FILE_SIZE: int = Field(10 * 1024 * 1024, env="MAX_FILE_SIZE")  # 10MB
     
@@ -87,6 +88,32 @@ class Settings(BaseSettings):
                 return ["http://localhost:3000"]
         return v
     
+    @validator('GEMINI_MODEL')
+    def validate_gemini_model(cls, v):
+        """Validate Gemini model name"""
+        valid_models = [
+            "gemini-1.5-flash",
+            "gemini-1.5-pro",
+            "gemini-pro",
+            "gemini-pro-vision"
+        ]
+        if v not in valid_models:
+            logger.warning(f"GEMINI_MODEL '{v}' is not in the list of common models: {valid_models}")
+        return v
+    
+    @validator('GEMINI_TEMPERATURE')
+    def validate_temperature(cls, v):
+        """Validate temperature is between 0 and 2"""
+        if not 0 <= v <= 2:
+            raise ValueError("GEMINI_TEMPERATURE must be between 0 and 2")
+        return v
+    
+    @validator('GEMINI_MAX_TOKENS')
+    def validate_max_tokens(cls, v):
+        """Validate max tokens is reasonable"""
+        if v < 1 or v > 8192:
+            logger.warning(f"GEMINI_MAX_TOKENS {v} is outside typical range (1-8192)")
+        return v
     
     @validator('SMTP_HOST')
     def validate_smtp_host(cls, v):
@@ -211,6 +238,16 @@ class Settings(BaseSettings):
         
         return status
     
+    def is_gemini_configured(self) -> bool:
+        """Check if Gemini is properly configured"""
+        return bool(self.GEMINI_API_KEY)
+    
+    def get_gemini_config_status(self) -> str:
+        """Get human-readable Gemini configuration status"""
+        if not self.is_gemini_configured():
+            return "❌ Not configured - GEMINI_API_KEY missing"
+        
+        return f"✅ Configured - Model: {self.GEMINI_MODEL}, Temp: {self.GEMINI_TEMPERATURE}"
     
     class Config:
         env_file = ".env"
@@ -240,13 +277,15 @@ configure_logger()
 # Validate settings on import
 try:
     email_status = settings.get_email_config_status()
+    gemini_status = settings.get_gemini_config_status()
+    
     logger.info(f"Email configuration: {email_status}")
+    logger.info(f"Gemini configuration: {gemini_status}")
     
     # Log additional configuration info
     logger.info(f"App environment: {settings.APP_ENV}")
     logger.info(f"Database: {'Configured' if settings.DATABASE_URL else '❌ Not configured'}")
     logger.info(f"Redis: {'Configured' if settings.REDIS_URL else '❌ Not configured'}")
-    logger.info(f"OpenAI: {'Configured' if settings.OPENAI_API_KEY else '❌ Not configured'}")
     
 except Exception as e:
     logger.error(f"Error validating settings: {e}")

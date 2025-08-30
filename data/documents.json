@@ -1,0 +1,49 @@
+{
+  "2d9c3792-4c0b-4467-9243-d97dae1d7d60": {
+    "doc_id": "2d9c3792-4c0b-4467-9243-d97dae1d7d60",
+    "filename": "Danish_Akhtar_Resume 2.pdf",
+    "chunk_count": 5,
+    "chunk_ids": []
+  },
+  "a9ac7fe7-b9d4-4e7e-840d-f63f651f0cfc": {
+    "doc_id": "a9ac7fe7-b9d4-4e7e-840d-f63f651f0cfc",
+    "filename": "DSA Day-wise.pdf",
+    "chunk_count": 26,
+    "chunk_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ]
+  },
+  "daea7319-a422-4a7d-9da9-7714239e95a3": {
+    "doc_id": "daea7319-a422-4a7d-9da9-7714239e95a3",
+    "filename": "Marriage Proposal.pdf",
+    "chunk_count": 1,
+    "chunk_ids": [
+      26
+    ]
+  }
+}

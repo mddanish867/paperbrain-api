@@ -66,7 +66,7 @@ pip install -r requirements.txt
 ⚠️ Never commit this file. Add to .gitignore.
 
 # OpenAI
-OPENAI_API_KEY=your_openai_api_key
+GEMINI_API_KEY=your_GEMINI_API_KEY
 
 # Pinecone
 PINECONE_API_KEY=your_pinecone_api_key
