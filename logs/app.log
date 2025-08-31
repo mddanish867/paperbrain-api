@@ -370,3 +370,55 @@
 2025-08-30 22:53:43,364 - paperbrain - INFO - chat:115 - Performing general search across all documents
 2025-08-30 22:53:43,417 - paperbrain - INFO - chat:118 - General search returned 5 chunks
 2025-08-30 22:53:43,418 - paperbrain - INFO - chat:159 - Calling Gemini API...
+2025-08-31 09:09:43,890 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-31 09:09:49,239 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-31 09:11:56,657 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-31 09:12:02,638 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-31 09:12:02,639 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-31 09:12:02,810 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-31 09:12:07,966 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 3, 'total_chunks': 27, 'index_size': 27, 'embedding_dimension': 384}
+2025-08-31 09:12:07,967 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-31 09:12:42,862 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:18:23,125 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-31 09:18:26,178 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-31 09:19:12,758 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-31 09:20:03,496 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-31 09:20:03,496 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-31 09:20:03,702 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-31 09:20:08,709 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 3, 'total_chunks': 27, 'index_size': 27, 'embedding_dimension': 384}
+2025-08-31 09:20:08,711 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-31 09:23:28,332 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-31 09:23:30,780 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-31 09:24:10,412 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-31 09:24:15,625 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-31 09:24:15,626 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-31 09:24:15,813 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-31 09:24:20,343 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'faiss', 'total_documents': 3, 'total_chunks': 27, 'index_size': 27, 'embedding_dimension': 384}
+2025-08-31 09:24:20,345 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-31 09:41:30,188 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:46:36,941 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:52:43,588 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:52:57,528 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:54:17,751 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:54:20,441 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:54:22,801 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:54:24,131 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:54:25,422 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:54:50,396 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:55:56,136 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:55:57,406 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:55:58,726 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:56:01,256 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:56:03,456 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:56:05,727 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:56:09,616 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:56:10,937 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 09:56:12,307 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 10:06:22,984 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 16:10:09,262 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 16:49:16,260 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 16:50:01,547 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 16:54:03,582 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 16:57:37,334 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 16:58:14,748 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-08-31 16:58:42,133 - paperbrain - INFO - auth:166 - User logged in: akhtar298

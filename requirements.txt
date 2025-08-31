@@ -40,3 +40,4 @@ sqlalchemy
 pillow
 psycopg2-binary
 alembic  # for db migration
+pydantic_settings
