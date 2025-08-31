@@ -8,10 +8,9 @@ python-multipart
 langchain
 # langchain-openai==0.0.2
 langchain-openai
-# pinecone-client==2.2.4
-pinecone-client
-# faiss-cpu==1.7.4
-faiss-cpu
+
+pinecone
+
 # PyPDF2==3.0.1
 PyPDF2
 # python-dotenv==1.0.0

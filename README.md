@@ -160,3 +160,7 @@ GET /health → Health check
 #Alembic Migrtion
 sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable)
 relation "paperbrainusers" does not exist
+
+
+#start-app 
+# uvicorn app.main:app --reload --host 0.0.0.0 --port 8000

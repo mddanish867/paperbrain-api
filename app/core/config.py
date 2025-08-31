@@ -41,10 +41,12 @@ class Settings(BaseSettings):
     SMTP_FROM: str = Field(..., env="SMTP_FROM")
     
     # Vector Store
-    VECTOR_BACKEND: str = Field("faiss", env="VECTOR_BACKEND")
+    VECTOR_BACKEND: str = Field("pinecone", env="VECTOR_BACKEND")
     PINECONE_API_KEY: Optional[str] = Field(None, env="PINECONE_API_KEY")
     PINECONE_ENVIRONMENT: Optional[str] = Field(None, env="PINECONE_ENVIRONMENT")
     PINECONE_INDEX: Optional[str] = Field("rag-index", env="PINECONE_INDEX")
+    PINECONE_REGION: str = "us-west-1"  # default if not in env
+    PINECONE_CLOUD: str = "aws"         # default if not in env
     
     # CORS
     CORS_ORIGINS: List[str] = Field(

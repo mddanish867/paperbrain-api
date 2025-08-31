@@ -1,12 +1,11 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from app.services.chat import chat_service
 from app.db.models.chat import ChatRequest, ChatResponse, ConversationHistory
 
-
 router = APIRouter(prefix="/chat", tags=["chat"])
+
 @router.post("", response_model=ChatResponse)
 async def chat(request: ChatRequest):
-    """Get response from AI with optional document context"""
     try:
         response = await chat_service.get_response(
             message=request.message,
@@ -18,24 +17,20 @@ async def chat(request: ChatRequest):
 
 @router.get("/history/{session_id}", response_model=ConversationHistory)
 async def get_chat_history(session_id: str):
-    """Get chat history for a session"""
     history = chat_service.get_conversation_history(session_id)
     return ConversationHistory(messages=history, session_id=session_id)
 
 @router.delete("/history/{session_id}")
 async def clear_chat_history(session_id: str):
-    """Clear chat history for a session"""
     chat_service.clear_conversation_history(session_id)
     return {"message": f"Chat history cleared for session {session_id}"}
 
 @router.get("/sessions")
 async def list_sessions():
-    """List available chat sessions (placeholder - would need implementation)"""
     return {"sessions": []}
 
 @router.get("/session/{session_id}/info")
 async def get_session_info(session_id: str):
-    """Get information about a specific session"""
     session_info = chat_service.get_session_info(session_id)
     if not session_info:
         raise HTTPException(status_code=404, detail="Session not found")
