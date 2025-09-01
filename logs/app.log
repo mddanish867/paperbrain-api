@@ -503,3 +503,47 @@ HTTP response body: {"code":3,"message":"Vector dimension 384 does not match the
 
 2025-08-31 23:02:02,053 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
 2025-08-31 23:02:03,938 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-31 23:14:35,087 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-31 23:14:41,629 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-31 23:14:41,636 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-31 23:14:41,806 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-31 23:15:02,900 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'total_documents': 0, 'index_size': 0, 'embedding_dimension': 1024}
+2025-08-31 23:15:02,904 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-08-31 23:16:00,898 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-31 23:16:05,530 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-31 23:16:58,755 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-08-31 23:17:01,835 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-08-31 23:17:18,216 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-08-31 23:17:24,062 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-08-31 23:17:24,063 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-08-31 23:17:24,213 - paperbrain - INFO - main:84 - Database connection successful
+2025-08-31 23:17:38,396 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 0, 'index_size': 0, 'embedding_dimension': 1024}
+2025-08-31 23:17:38,398 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-01 08:49:00,657 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-01 08:49:03,958 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-01 08:49:14,674 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-09-01 08:49:19,358 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-01 08:49:19,360 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-01 08:49:19,499 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-01 08:49:25,211 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 0, 'index_size': 0, 'embedding_dimension': 1024}
+2025-09-01 08:49:25,215 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-01 08:51:01,104 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-09-01 08:51:32,642 - paperbrain - INFO - document_processor:35 - Processing PDF: cowincertificate.pdf
+2025-09-01 08:51:33,044 - paperbrain - INFO - document_processor:70 - Processed cowincertificate.pdf into 2 chunks
+2025-09-01 08:51:42,255 - paperbrain - INFO - chat:48 - Created document session doc_1a989345772c for doc 3029971c-62df-4064-ab95-fdc9b2d64190
+2025-09-01 08:51:42,257 - paperbrain - INFO - documents:39 - Uploaded document cowincertificate.pdf with doc_id 3029971c-62df-4064-ab95-fdc9b2d64190
+2025-09-01 08:52:56,728 - paperbrain - INFO - chat:63 - Using document context from session: 3029971c-62df-4064-ab95-fdc9b2d64190
+2025-09-01 08:53:02,198 - paperbrain - INFO - chat:85 - Document-filtered search returned 2 chunks
+2025-09-01 08:53:50,581 - paperbrain - INFO - chat:63 - Using document context from session: 3029971c-62df-4064-ab95-fdc9b2d64190
+2025-09-01 08:53:51,568 - paperbrain - INFO - chat:85 - Document-filtered search returned 2 chunks
+2025-09-01 12:39:11,078 - paperbrain - INFO - chat:63 - Using document context from session: 3029971c-62df-4064-ab95-fdc9b2d64190
+2025-09-01 12:39:16,762 - paperbrain - INFO - chat:85 - Document-filtered search returned 2 chunks
+2025-09-01 12:40:04,150 - paperbrain - INFO - auth:166 - User logged in: akhtar298
+2025-09-01 12:43:40,696 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-01 12:43:44,884 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-01 12:43:58,729 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-09-01 12:44:03,305 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-01 12:44:03,307 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-01 12:44:03,450 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-01 12:44:07,172 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 1, 'index_size': 12, 'embedding_dimension': 1024}
+2025-09-01 12:44:07,173 - paperbrain - INFO - main:98 - Email configuration validated successfully

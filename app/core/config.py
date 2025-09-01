@@ -87,7 +87,7 @@ class Settings(BaseSettings):
                 return json.loads(v)
             except json.JSONDecodeError:
                 logger.warning(f"Failed to parse CORS_ORIGINS as JSON: {v}")
-                return ["http://localhost:5173"]
+                return ["http://localhost:5173","https://paperbrain-xi.vercel.app"]
         return v
     
     @validator('GEMINI_MODEL')
