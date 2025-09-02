@@ -580,3 +580,160 @@ HTTP response body: {"code":3,"message":"Vector dimension 384 does not match the
 2025-09-02 11:48:29,075 - paperbrain - INFO - documents:39 - Uploaded document sajiddd.pdf with doc_id 521f3d45-de04-4b79-ae90-d860411b8068
 2025-09-02 11:49:29,246 - paperbrain - INFO - chat:63 - Using document context from session: 521f3d45-de04-4b79-ae90-d860411b8068
 2025-09-02 11:49:31,986 - paperbrain - INFO - chat:85 - Document-filtered search returned 1 chunks
+2025-09-02 12:06:30,773 - paperbrain - INFO - chat:91 - General search returned 5 chunks
+2025-09-02 12:07:29,929 - paperbrain - INFO - document_processor:35 - Processing PDF: DSA.pdf
+2025-09-02 12:07:30,025 - paperbrain - ERROR - document_processor:93 - Error reading PDF file: PyCryptodome is required for AES algorithm
+2025-09-02 12:07:30,026 - paperbrain - ERROR - document_processor:74 - Failed to process PDF DSA.pdf: PyCryptodome is required for AES algorithm
+2025-09-02 12:07:30,026 - paperbrain - ERROR - documents:49 - Failed to upload document: Failed to process PDF: PyCryptodome is required for AES algorithm
+2025-09-02 12:07:45,020 - paperbrain - INFO - document_processor:35 - Processing PDF: Danish_Akhtar_Resume 2.pdf
+2025-09-02 12:07:45,268 - paperbrain - INFO - document_processor:70 - Processed Danish_Akhtar_Resume 2.pdf into 5 chunks
+2025-09-02 12:07:56,345 - paperbrain - INFO - chat:48 - Created document session doc_6daa4e534410 for doc ae0945fe-ee3c-4946-a289-292d0d091ec0
+2025-09-02 12:07:56,346 - paperbrain - INFO - documents:39 - Uploaded document Danish_Akhtar_Resume 2.pdf with doc_id ae0945fe-ee3c-4946-a289-292d0d091ec0
+2025-09-02 12:08:13,418 - paperbrain - INFO - chat:63 - Using document context from session: ae0945fe-ee3c-4946-a289-292d0d091ec0
+2025-09-02 12:08:16,409 - paperbrain - INFO - chat:85 - Document-filtered search returned 5 chunks
+2025-09-02 12:09:23,819 - paperbrain - INFO - chat:63 - Using document context from session: ae0945fe-ee3c-4946-a289-292d0d091ec0
+2025-09-02 12:09:26,662 - paperbrain - INFO - chat:85 - Document-filtered search returned 5 chunks
+2025-09-02 12:10:08,241 - paperbrain - INFO - chat:63 - Using document context from session: ae0945fe-ee3c-4946-a289-292d0d091ec0
+2025-09-02 12:10:09,474 - paperbrain - INFO - chat:85 - Document-filtered search returned 5 chunks
+2025-09-02 12:16:57,989 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 12:17:01,080 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 12:17:09,390 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-pro
+2025-09-02 12:17:15,075 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-02 12:17:15,076 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 12:17:15,220 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-02 12:17:19,452 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 3, 'index_size': 25, 'embedding_dimension': 1024}
+2025-09-02 12:17:19,453 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 12:17:29,679 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 12:17:31,421 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 12:17:36,744 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-pro
+2025-09-02 12:17:40,254 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-02 12:17:40,255 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 12:17:40,411 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-02 12:17:44,667 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 3, 'index_size': 25, 'embedding_dimension': 1024}
+2025-09-02 12:17:44,679 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 12:17:58,215 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 12:18:02,994 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 12:18:09,066 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-pro
+2025-09-02 12:18:12,592 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-02 12:18:12,592 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 12:18:12,743 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-02 12:18:16,383 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 3, 'index_size': 25, 'embedding_dimension': 1024}
+2025-09-02 12:18:16,384 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 12:18:19,787 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 12:18:21,423 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 12:18:26,155 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-pro
+2025-09-02 12:18:29,100 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-02 12:18:29,100 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 12:18:29,203 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-02 12:18:32,925 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 3, 'index_size': 25, 'embedding_dimension': 1024}
+2025-09-02 12:18:32,927 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 12:22:11,552 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 12:22:13,616 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 12:22:20,681 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-pro
+2025-09-02 12:22:22,663 - paperbrain - INFO - summary:22 - Initialized Gemini client for summary with model: gemini-1.5-pro
+2025-09-02 12:22:26,037 - paperbrain - INFO - main:73 - Starting PaperBrain API in development mode
+2025-09-02 12:22:26,038 - paperbrain - ERROR - main:80 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 12:22:26,186 - paperbrain - INFO - main:85 - Database connection successful
+2025-09-02 12:22:29,998 - paperbrain - INFO - main:92 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 3, 'index_size': 25, 'embedding_dimension': 1024}
+2025-09-02 12:22:29,999 - paperbrain - INFO - main:99 - Email configuration validated successfully
+2025-09-02 12:23:07,147 - paperbrain - INFO - document_processor:35 - Processing PDF: Danish_Akhtar_Resume 2.pdf
+2025-09-02 12:23:07,360 - paperbrain - INFO - document_processor:70 - Processed Danish_Akhtar_Resume 2.pdf into 5 chunks
+2025-09-02 12:23:18,962 - paperbrain - INFO - chat:48 - Created document session doc_60f291543b00 for doc 0d0ee843-3864-439a-9fab-f696d007b239
+2025-09-02 12:23:18,963 - paperbrain - INFO - documents:39 - Uploaded document Danish_Akhtar_Resume 2.pdf with doc_id 0d0ee843-3864-439a-9fab-f696d007b239
+2025-09-02 12:24:04,262 - paperbrain - ERROR - summary:92 - Summary error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2025-09-02 12:24:53,593 - paperbrain - ERROR - summary:92 - Summary error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+2025-09-02 12:25:18,280 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 12:25:20,124 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 12:25:24,735 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-09-02 12:25:27,014 - paperbrain - INFO - summary:22 - Initialized Gemini client for summary with model: gemini-1.5-flash
+2025-09-02 12:25:29,739 - paperbrain - INFO - main:73 - Starting PaperBrain API in development mode
+2025-09-02 12:25:29,740 - paperbrain - ERROR - main:80 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 12:25:29,855 - paperbrain - INFO - main:85 - Database connection successful
+2025-09-02 12:25:33,225 - paperbrain - INFO - main:92 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 4, 'index_size': 30, 'embedding_dimension': 1024}
+2025-09-02 12:25:33,226 - paperbrain - INFO - main:99 - Email configuration validated successfully

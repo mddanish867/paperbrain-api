@@ -12,7 +12,7 @@ from app.utils.logger import logger
 # Then import other modules
 from app.db.base import Base
 from app.db.session import engine
-from app.api.v1 import auth, chat, documents
+from app.api.v1 import auth, chat, documents, summary
 from app.middleware.rate_limit import rate_limit_middleware
 from app.services.analytics import analytics_service
 from app.services.cache import cache_service
@@ -54,6 +54,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(chat.router)
 app.include_router(documents.router)
+app.include_router(summary.router)
 
 # Dependency injections
 def get_chat_service():
