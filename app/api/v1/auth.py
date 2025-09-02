@@ -19,7 +19,7 @@ from app.core.security import (
 from app.utils.validators import validate_email, validate_password
 from app.utils.logger import logger
 
-router = APIRouter(prefix="/auth", tags=["auth"])
+router = APIRouter(prefix="/api/v1/auth", tags=["auth"])
 security = HTTPBearer()
 
 # Pydantic Models

@@ -8,7 +8,7 @@ from app.services.document_processor import DocumentProcessor
 from app.db.models.documents import DocumentUploadResponse, DocumentListResponse, DocumentDeleteResponse
 from app.utils.logger import logger
 
-router = APIRouter(prefix="/documents", tags=["documents"])
+router = APIRouter(prefix="/api/v1/documents", tags=["documents"])
 
 
 @router.post("/upload", response_model=DocumentUploadResponse)

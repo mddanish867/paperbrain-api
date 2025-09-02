@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from app.services.chat import chat_service
 from app.db.models.chat import ChatRequest, ChatResponse, ConversationHistory
 
-router = APIRouter(prefix="/chat", tags=["chat"])
+router = APIRouter(prefix="/api/v1/chat", tags=["chat"])
 
 @router.post("", response_model=ChatResponse)
 async def chat(request: ChatRequest):

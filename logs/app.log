@@ -547,3 +547,36 @@ HTTP response body: {"code":3,"message":"Vector dimension 384 does not match the
 2025-09-01 12:44:03,450 - paperbrain - INFO - main:84 - Database connection successful
 2025-09-01 12:44:07,172 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 1, 'index_size': 12, 'embedding_dimension': 1024}
 2025-09-01 12:44:07,173 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 11:38:51,590 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 11:39:05,640 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 11:39:43,003 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-09-02 11:41:30,268 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 11:41:35,166 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 11:42:23,963 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-09-02 11:42:33,598 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-02 11:42:33,600 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 11:42:33,758 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-02 11:42:43,668 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 1, 'index_size': 19, 'embedding_dimension': 1024}
+2025-09-02 11:42:43,670 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 11:46:13,771 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 11:46:16,238 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 11:46:23,185 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-09-02 11:46:27,440 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-02 11:46:27,441 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 11:46:27,549 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-02 11:46:32,240 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 1, 'index_size': 19, 'embedding_dimension': 1024}
+2025-09-02 11:46:32,240 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 11:46:38,035 - paperbrain - INFO - email:17 - Email service initialized with Brevo SMTP: smtp-relay.brevo.com:587
+2025-09-02 11:46:40,789 - paperbrain - INFO - redis:31 - RedisLab connection successful
+2025-09-02 11:46:48,503 - paperbrain - INFO - chat:25 - Initialized Gemini client with model: gemini-1.5-flash
+2025-09-02 11:46:53,223 - paperbrain - INFO - main:72 - Starting PaperBrain API in development mode
+2025-09-02 11:46:53,224 - paperbrain - ERROR - main:79 - Redis connection failed: 'CacheService' object has no attribute 'redis_client'
+2025-09-02 11:46:53,330 - paperbrain - INFO - main:84 - Database connection successful
+2025-09-02 11:46:56,669 - paperbrain - INFO - main:91 - Vector store initialized: {'backend': 'pinecone-v3', 'embedding_model': 'gemini-embedding-001', 'total_documents': 1, 'index_size': 19, 'embedding_dimension': 1024}
+2025-09-02 11:46:56,670 - paperbrain - INFO - main:98 - Email configuration validated successfully
+2025-09-02 11:48:20,703 - paperbrain - INFO - document_processor:35 - Processing PDF: sajiddd.pdf
+2025-09-02 11:48:21,019 - paperbrain - INFO - document_processor:70 - Processed sajiddd.pdf into 1 chunks
+2025-09-02 11:48:29,074 - paperbrain - INFO - chat:48 - Created document session doc_ab388cd50d02 for doc 521f3d45-de04-4b79-ae90-d860411b8068
+2025-09-02 11:48:29,075 - paperbrain - INFO - documents:39 - Uploaded document sajiddd.pdf with doc_id 521f3d45-de04-4b79-ae90-d860411b8068
+2025-09-02 11:49:29,246 - paperbrain - INFO - chat:63 - Using document context from session: 521f3d45-de04-4b79-ae90-d860411b8068
+2025-09-02 11:49:31,986 - paperbrain - INFO - chat:85 - Document-filtered search returned 1 chunks
